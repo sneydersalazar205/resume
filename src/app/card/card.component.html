@@ -1,0 +1,25 @@
+<div class="card" data-aos="fade-up">
+  <div class="card-horizontal">
+    <img [src]="imageSrc" alt="{{title}}" class="card-img-left">
+    <div class="card-content">
+      <div class="card-header">
+        <img [src]="headerImageSrc" alt="{{title}}" class="header-image">
+        <div class="social-icons">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{description}}</p>
+      </div>
+      <div class="card-carousel">
+        <app-carousel [images]="carouselImages">carrusel</app-carousel>
+      </div>
+      <div class="card-modal">
+        <!-- Aquí iría el contenido del modal -->
+      </div>
+    </div>
+  </div>
+</div>

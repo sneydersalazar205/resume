@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<nav class="navbar" (mouseleave)="closeNavbar()">
+    <button class="navbar-toggler" (click)="toggleNavbar()">☰</button>
+    <ul [ngClass]="{'navbar-collapsed': isNavbarCollapsed}">
+      <li><a href="#section1" class="active">section1</a></li>
+      <li><a href="#section2">section2</a></li>
+      <li><a href="#section3">section3</a></li>
+      <li><a href="#section4">section4</a></li>
+    </ul>
+  </nav>
+  <div id="section1" class="section" data-aos="fade-up">
+    <p>card section 1</p>
+    <app-card
+    headerImageSrc="https://via.placeholder.com/40"
+    imageSrc="https://via.placeholder.com/300"
+    title="Card Title 1"
+    description="This is a description for card 1.">
+    </app-card>
+  </div>
+  <div id="section2" class="section" data-aos="fade-up">
+    <p>card section 2</p>
+    <app-card
+      [imageSrc]="'assets/pexels-steinportraits-1898555.jpg'"
+      [headerImageSrc]="'assets/pexels-steinportraits-1898555.jpg'"
+      [title]="'Card Title'"
+      [description]="'This is a description for the card.'"
+      [carouselImages]="carouselImages">
+    </app-card>
+  </div>
+  <div id="section3" class="section" data-aos="fade-up">
+    <p>card section 3</p>
+    <app-card
+    headerImageSrc="https://via.placeholder.com/40"
+    imageSrc="https://via.placeholder.com/300"
+    title="Card Title 3"
+    description="This is a description for card 3.">
+    </app-card>
+  </div>
+  <div id="section4" class="section" data-aos="fade-up">
+    <p>card section 4</p>
+    <app-card 
+      imageSrc="https://via.placeholder.com/300"
+      title="Card Title 4"
+      description="This is a description for card 4."></app-card>
+  </div>
+  
