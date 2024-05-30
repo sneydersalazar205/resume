@@ -1,24 +1,45 @@
 <div class="card" data-aos="fade-up">
+  <!-- Contenedor principal de la tarjeta, con animación AOS aplicada -->
   <div class="card-horizontal">
+    <!-- Contenedor que organiza el contenido de la tarjeta en formato horizontal -->
+    
     <img [src]="imageSrc" alt="{{title}}" class="card-img-left">
+    <!-- Imagen principal de la tarjeta, usando la propiedad 'imageSrc' para la URL de la imagen y 'title' para el texto alternativo -->
+    
     <div class="card-content">
+      <!-- Contenedor para el contenido textual de la tarjeta -->
+
       <div class="card-header">
+        <!-- Encabezado de la tarjeta, que incluye una imagen y iconos sociales -->
+        
         <img [src]="headerImageSrc" alt="{{title}}" class="header-image">
+        <!-- Imagen del encabezado de la tarjeta, usando la propiedad 'headerImageSrc' para la URL de la imagen y 'title' para el texto alternativo -->
+
         <div class="social-icons">
+          <!-- Contenedor de los iconos de redes sociales -->
           <i class="fab fa-facebook-f"></i>
+          <!-- Icono de Facebook -->
           <i class="fab fa-twitter"></i>
+          <!-- Icono de Twitter -->
           <i class="fab fa-instagram"></i>
+          <!-- Icono de Instagram -->
         </div>
       </div>
+
       <div class="card-body">
+        <!-- Cuerpo de la tarjeta, que contiene el título y la descripción -->
+
         <h5 class="card-title">{{title}}</h5>
+        <!-- Título de la tarjeta, usando la propiedad 'title' -->
+        
         <p class="card-text">{{description}}</p>
+        <!-- Descripción de la tarjeta, usando la propiedad 'description' -->
       </div>
+
       <div class="card-carousel">
+        <!-- Contenedor para el componente del carrusel -->
         <app-carousel [images]="carouselImages">carrusel</app-carousel>
-      </div>
-      <div class="card-modal">
-        <!-- Aquí iría el contenido del modal -->
+        <!-- Componente del carrusel, pasando las imágenes a través de la propiedad 'carouselImages' -->
       </div>
     </div>
   </div>
