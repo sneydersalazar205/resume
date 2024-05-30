@@ -1,9 +1,18 @@
-<div>
-  <button class="btn btn-primary" (click)="toggleModal()">Open Modal</button>
+<!-- Contenedor principal -->
+<div class="container">
+  <!-- Botón para abrir/cerrar el modal -->
+  <button class="btn btn-primary" (click)="toggleModal()">Experiencia Laboral</button>
+  
+  <!-- Modal -->
   <div class="modal" [class.show]="isModalOpen">
+    <!-- Contenido del modal -->
     <div class="modal-content">
+      <!-- Botón para cerrar el modal -->
       <span class="close" (click)="toggleModal()">&times;</span>
+      
+      <!-- Contenido adicional del modal proporcionado mediante ng-content -->
       <ng-content *ngIf="isModalOpen"></ng-content>
     </div>
   </div>
 </div>
+

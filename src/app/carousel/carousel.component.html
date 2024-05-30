@@ -1,19 +1,19 @@
+<!-- Contenedor del carrusel con animación de AOS -->
 <div class="carousel" data-aos="fade-up">
-  <!-- Botón para ir a la imagen anterior -->
+  <!-- Botón de control para retroceder en el carrusel -->
   <button class="carousel-control prev" (click)="prev()">&#10094;</button>
 
-  <!-- Contenedor de las imágenes del carrusel -->
+  <!-- Contenedor de los elementos del carrusel -->
   <div class="carousel-inner">
-    <!-- Directiva *ngFor para iterar sobre la lista de imágenes -->
-    <!-- Cada imagen tiene un enlace a su fuente y un texto alternativo -->
-    <!-- Se aplica la clase 'active' a la imagen actual -->
-    <img *ngFor="let image of images; let i = index"
-         [src]="image.src"
-         [alt]="image.alt"
-         [class.active]="i === currentIndex"
-         class="carousel-image">
+    <!-- Iteración sobre las imágenes del carrusel -->
+    <div *ngFor="let image of images; let i = index" class="carousel-item" [class.active]="i === currentIndex">
+      <!-- Imagen del carrusel -->
+      <img [src]="image.src" [alt]="image.alt" class="carousel-image">
+      <!-- Descripción de la imagen -->
+      <p class="image-description" *ngIf="i === currentIndex">{{ image.description }}</p>
+    </div>
   </div>
 
-  <!-- Botón para ir a la siguiente imagen -->
+  <!-- Botón de control para avanzar en el carrusel -->
   <button class="carousel-control next" (click)="next()">&#10095;</button>
 </div>

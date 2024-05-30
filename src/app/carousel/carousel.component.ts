@@ -1,38 +1,74 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import * as AOS from 'aos';
 
 @Component({
-  selector: 'app-carousel', 
-  templateUrl: './carousel.component.html', 
-  styleUrls: ['./carousel.component.scss'] 
+  selector: 'app-carousel',
+  templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
-
-  // Decorador @Input para recibir una lista de imágenes desde el componente padre
-  @Input() images: { src: string, alt: string }[] = [];
+export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   
-  // Propiedad que mantiene el índice de la imagen actual en el carrusel
+  // Propiedad de entrada que recibe una lista de objetos de imagen desde el componente padre
+  @Input() images: { src: string, alt: string, description: string }[] = [];
+  
+  // Índice actual de la imagen mostrada en el carrusel
   currentIndex: number = 0;
 
-  // Método de ciclo de vida ngOnInit que se ejecuta al inicializar el componente
-  ngOnInit = () => {
-    AOS.init(); // Inicializa la librería AOS para animaciones en scroll
-  };
+  // Identificador del intervalo para el auto deslizamiento de las imágenes
+  autoSlideInterval: any;
 
-  // Método de ciclo de vida ngAfterViewInit que se ejecuta después de que la vista del componente ha sido inicializada
-  ngAfterViewInit = () => {
-    AOS.refresh(); // Refresca AOS para asegurarse de que las animaciones se apliquen correctamente
-  };
+  // Método del ciclo de vida ngOnInit que se ejecuta cuando el componente se inicializa
+  ngOnInit() {
+    // Inicializa la biblioteca AOS (Animate On Scroll)
+    AOS.init();
+    // Inicia el auto deslizamiento del carrusel
+    this.startAutoSlide();
+  }
 
-  // Método para mostrar la imagen anterior en el carrusel
-  prev = () => {
+  // Método del ciclo de vida ngAfterViewInit que se ejecuta después de que la vista ha sido inicializada
+  ngAfterViewInit() {
+    // Refresca las animaciones de AOS para asegurar que se apliquen correctamente
+    AOS.refresh();
+  }
+
+  // Método del ciclo de vida ngOnDestroy que se ejecuta cuando el componente se destruye
+  ngOnDestroy() {
+    // Detiene el auto deslizamiento del carrusel
+    this.stopAutoSlide();
+  }
+
+  // Inicia el auto deslizamiento de las imágenes del carrusel
+  startAutoSlide() {
+    this.autoSlideInterval = setInterval(() => {
+      // Muestra la siguiente imagen del carrusel
+      this.next();
+    }, 6000); // Cambia de imagen cada 6 segundos
+  }
+
+  // Detiene el auto deslizamiento de las imágenes del carrusel
+  stopAutoSlide() {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+    }
+  }
+
+  // Muestra la imagen anterior en el carrusel
+  prev() {
+    // Detiene el auto deslizamiento temporalmente
+    this.stopAutoSlide();
+    // Actualiza el índice de la imagen actual
     this.currentIndex = (this.currentIndex === 0) ? this.images.length - 1 : this.currentIndex - 1;
-    // Si el índice actual es 0, se cambia al último índice; de lo contrario, se decrementa en 1
-  };
+    // Reinicia el auto deslizamiento
+    this.startAutoSlide();
+  }
 
-  // Método para mostrar la siguiente imagen en el carrusel
-  next = () => {
+  // Muestra la siguiente imagen en el carrusel
+  next() {
+    // Detiene el auto deslizamiento temporalmente
+    this.stopAutoSlide();
+    // Actualiza el índice de la imagen actual
     this.currentIndex = (this.currentIndex === this.images.length - 1) ? 0 : this.currentIndex + 1;
-    // Si el índice actual es el último, se cambia al primer índice; de lo contrario, se incrementa en 1
-  };
+    // Reinicia el auto deslizamiento
+    this.startAutoSlide();
+  }
 }

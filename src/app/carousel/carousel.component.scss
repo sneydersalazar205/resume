@@ -1,64 +1,76 @@
+/* Estilos para el contenedor del carrusel */
 .carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-  
-    .carousel-control {
-      background-color: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: white;
-      cursor: pointer;
-      padding: 10px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-  
-      &.prev {
-        left: 10px;
-      }
-  
-      &.next {
-        right: 10px;
-      }
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  overflow: hidden;
+
+  .carousel-control {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
     }
-  
-    .carousel-inner {
-      display: flex;
+
+    &.prev {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
+  }
+
+  .carousel-inner {
+    display: flex;
+    width: 100%;
+
+    .carousel-item {
       width: 100%;
-  
+      display: none;
+      text-align: center;
+      transition: opacity 0.5s ease-in-out;
+
+      &.active {
+        display: block;
+        opacity: 1;
+      }
+
       .carousel-image {
         width: 100%;
-        display: none;
-        transition: opacity 0.5s ease-in-out;
-  
-        &.active {
-          display: block;
-          opacity: 1;
-        }
+      }
+
+      .image-description {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #666;
       }
     }
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .carousel-control {
-      padding: 5px;
-  
-      &.prev {
-        left: 5px;
-      }
-  
-      &.next {
-        right: 5px;
-      }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-control {
+    padding: 5px;
+
+    &.prev {
+      left: 5px;
+    }
+
+    &.next {
+      right: 5px;
     }
   }
-  
+}

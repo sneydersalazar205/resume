@@ -1,0 +1,220 @@
+/* Importación de estilos externos */
+@import '../../node_modules/aos/dist/aos.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilos generales del cuerpo del documento */
+body{
+  font-family: "Montserrat", sans-serif;
+}
+/* Estilos para la barra de navegación */
+nav {
+  font-family: "Montserrat", sans-serif;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  .navbar-toggler {
+    font-size: 25px;
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+
+      &:hover,
+      &.active {
+        color: #3A73CD;
+      }
+    }
+  }
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+  justify-content: space-between;
+
+  .welcome-message {
+    padding: 10px; /* Reducir el relleno en dispositivos pequeños */
+  }
+
+  .welcome-message h1 {
+    font-size: 20px; /* Reducir el tamaño de la fuente en dispositivos pequeños */
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    display: none;
+
+    &.navbar-collapsed {
+      display: flex;
+    }
+
+    li {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+
+      a {
+        width: 100%;
+      }
+    }
+  }
+}
+}
+
+/* Estilos para el mensaje de bienvenida */
+.welcome-message {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Estilos para el título del mensaje de bienvenida */
+.welcome-message h1 {
+  padding-top: 10%;
+  font-size: 50px;
+  margin: 0;
+  color: #3A73CD;
+}
+/* Estilos para las secciones */
+.section {
+  padding: 40px;
+  margin: 20px;
+}
+
+/* Estilos para el modal de la tarjeta */
+.card-modal {
+  position: fixed; /* Posicionamiento fijo en relación con la ventana del navegador */
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+  /* Estilos para las tablas */
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+/* Estilos para los botones flotantes */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.floating-button:hover {
+  background-color: #128C7E;
+  transform: translateY(-5px);
+}
+
+.floating-button i {
+  font-size: 30px;
+}
+
+.floating-menu {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.floating-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.floating-menu a:last-child {
+  border-bottom: none;
+}
+
+.floating-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.floating-menu.show {
+  display: block;
+}
+/* Estilos para el pie de página */
+.footer {
+  background-color: #3A73CD;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+.footer-content {
+  margin: 0;
+  padding: 0;
+}
+.footer-content p {
+  margin: 5px 0;
+}

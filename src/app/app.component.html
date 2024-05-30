@@ -1,2 +1,200 @@
-<app-scroll-spy></app-scroll-spy>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!-- Navbar con links a secciones -->
+<nav class="navbar" (mouseleave)="closeNavbar()">
+  <!-- Botón para togglear el navbar en dispositivos pequeños -->
+  <button class="navbar-toggler" (click)="toggleNavbar()">☰</button>
+  <!-- Lista de enlaces del navbar -->
+  <ul [ngClass]="{'navbar-collapsed': isNavbarCollapsed}">
+    <li><a href="#section1" class="active">Bienvenida</a></li>
+    <li><a href="#section2">CV Paola Peña</a></li>
+    <li><a href="#section3">CV Carlos Rodriguez</a></li>
+  </ul>
+</nav>
+
+
+<!-- Sección 1 con animación de AOS -->
+<div id="section1" class="section" data-aos="fade-up">
+  <div class="welcome-message">
+    <h1>Bienvenido a nuestro CV virtual</h1>
+  </div>
+  </div>
+  
+  <!-- Sección 2 con animación de AOS -->
+  <div id="section2" class="section" data-aos="fade-up">
+    <app-card 
+    [imageSrc]="cardContentPaola.imageSrc"
+    [headerImageSrc]="cardContentPaola.headerImageSrc"
+    [title]="cardContentPaola.title"
+    [description]="cardContentPaola.description"
+    [carouselImages]="cardContentPaola.carouselImages"
+    [linkedinUrl]="'https://www.linkedin.com/in/paola-pe%C3%B1a-052281159/'"
+    [githubUrl]="'https://github.com/your-profile'">
+  </app-card>
+  
+    <!-- Modal con contenido adicional -->
+    <div class="card-modal">
+      
+      <app-modal>
+        <!-- Tabla dentro del modal -->
+        <table>
+          <tr>
+              <th>Empresa</th>
+              <th>Fecha</th>
+              <th>Cargo</th>
+          </tr>
+          <tr>
+              <td>SOPHOS SOLUTIONS</td>
+              <td>jul. de 2020 – Actualidad</td>
+              <td>Solution Consultant II, Bogotá</td>
+          </tr>
+          <tr>
+              <td>CONTROL BOX CORP</td>
+              <td>jun. de 2020 – jul. de 2020</td>
+              <td>Quality Assurance Analyst, Bogotá</td>
+          </tr>
+          <tr>
+              <td>EASY SOLUTIONS, A CYXTERA BUSSINES</td>
+              <td>ene. de 2019 – dic. de 2019</td>
+              <td>Software Testing Engineer 2, Bogotá</td>
+          </tr>
+          <tr>
+              <td>EASY SOLUTIONS, A CYXTERA BUSSINES</td>
+              <td>may. de 2018 – dic. de 2018</td>
+              <td>QA Tester, Medellín</td>
+          </tr>
+          <tr>
+              <td>INDRA COLOMBIA</td>
+              <td>Feb. de 2018 – May. de 2018</td>
+              <td>Analista de pruebas de Calidad, Pereira</td>
+          </tr>
+          <tr>
+              <td>INDRA COLOMBIA</td>
+              <td>oct. de 2016 – feb. de 2018</td>
+              <td>Analista de pruebas de Calidad, Pereira</td>
+          </tr>
+          <tr>
+              <td>INDRA COLOMBIA</td>
+              <td>ago. de 2015 – oct. de 2016</td>
+              <td>Analista de pruebas de Calidad, Bogotá</td>
+          </tr>
+      </table>
+      </app-modal>
+    </div>
+  </div>
+  
+  <!-- Sección 3 con animación de AOS y modal -->
+  <div id="section3" class="section" data-aos="fade-up">
+    <app-card 
+    [imageSrc]="cardContentCarlos.imageSrc"
+    [headerImageSrc]="cardContentCarlos.headerImageSrc"
+    [title]="cardContentCarlos.title"
+    [description]="cardContentCarlos.description"
+    [carouselImages]="cardContentCarlos.carouselImages"
+    [linkedinUrl]="'https://www.linkedin.com/in/carlos-alberto-rodriguez-cardenas-883784196/'"
+    [githubUrl]="'https://github.com/your-profile'">
+    
+  </app-card>
+    <!-- Modal con contenido adicional -->
+    <div class="card-modal">
+      <app-modal>
+        <!-- Tabla dentro del modal -->
+        <table>
+          <tr>
+            <th>Empresa</th>
+            <th>Fecha</th>
+            <th>Cargo</th>
+          </tr>
+          <tr>
+            <td>CARACOL TV</td>
+            <td>noviembre de 2022 – Actual</td>
+            <td>Analista de sistemas (fin de semana), Bogotá</td>
+          </tr>
+          <tr>
+            <td>SKYNET DE COLOMBIA</td>
+            <td>marzo de 2022 – agosto de 2022</td>
+            <td>Analista de sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>FARMACOL CHINOIN</td>
+            <td>agosto de 2021 – diciembre de 2021</td>
+            <td>Tecnico en sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>CLINICA DEL COUNTRY</td>
+            <td>febrero 2020 – marzo 2021</td>
+            <td>Auxiliar de soporte y sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>AZTECA COMUNICACIONES COLOMBIA</td>
+            <td>mayo 2018 – octubre 2019</td>
+            <td>Auxiliar de soporte y sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>COLOMBIANA DE COMERCIO</td>
+            <td>mayo de 2015 – febrero de 2018</td>
+            <td>Analista de soporte, Bogotá</td>
+          </tr>
+          <tr>
+            <td>COMWARE - ANH</td>
+            <td>diciembre de 2013 – mayo de 2015</td>
+            <td>Tecnico en sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>COMPUREDES - TELEFONICA</td>
+            <td>agosto de 2021 – diciembre de 2021</td>
+            <td>Tecnico en sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>COMPENDIUM</td>
+            <td>Julio 2011 – marzo 2012</td>
+            <td>Tecnico en sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>DATAPOINT DE COLOMBIA</td>
+            <td>noviembre 2010 – marzo 2011</td>
+            <td>Auxiliar de soporte y sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>TIMÓN S.A</td>
+            <td>mayo de 2010 – agosto de 2010</td>
+            <td>Analista de soporte, Bogotá</td>
+          </tr>
+          <tr>
+            <td>DOMESA DE COLOMBIA</td>
+            <td>noviembre de 2009 – febrero de 2010</td>
+            <td>Tecnico en sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>BASIC 3000</td>
+            <td>febrero de 2009 – agosto de 2009</td>
+            <td>Tecnico en sistemas, Bogotá</td>
+          </tr>
+          <tr>
+            <td>BRIGADA IT</td>
+            <td>Julio 2008 – octubre 2008</td>
+            <td>Tecnico en sistemas, Bogotá</td>
+          </tr>
+        </table>
+      </app-modal>      
+    </div>
+  </div>
+
+  <!-- Botón flotante de WhatsApp para contacto -->
+  <div class="floating-button" (click)="toggleMenu()">
+    <i class="fab fa-whatsapp"></i>
+    <!-- Menú flotante con enlaces a WhatsApp de Paola y Carlos -->
+    <div class="floating-menu" [ngClass]="{'show': isMenuOpen}">
+      <a href="https://wa.me/3017965628" target="_blank" rel="noopener">Paola Peña</a>
+      <a href="https://wa.me/3152021634" target="_blank" rel="noopener">Carlos Rodriguez</a>
+    </div>
+  </div>
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2024 | Página creada por TuNombre</p>
+      <p>Gracias por visitar nuestro sitio web</p>
+    </div>
+  </footer>
 <router-outlet />

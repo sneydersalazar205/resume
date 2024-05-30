@@ -21,7 +21,10 @@ export class CardComponent implements OnInit, AfterViewInit {
   @Input() description: string = '';
 
   // Propiedad de entrada para las imágenes del carrusel
-  @Input() carouselImages: { src: string, alt: string }[] = [];
+  @Input() carouselImages: { src: string, alt: string, description: string }[] = [];
+
+  @Input() linkedinUrl: string = ''; // Nueva propiedad de entrada para la URL de LinkedIn
+  @Input() githubUrl: string = ''; 
 
   // Método del ciclo de vida de Angular que se ejecuta al inicializar el componente
   ngOnInit() {
