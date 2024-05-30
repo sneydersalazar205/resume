@@ -59,9 +59,6 @@ export class ScrollSpyComponent implements OnInit, AfterViewInit {
     { src: 'https://via.placeholder.com/600x400?text=Slide+3', alt: 'Slide 3' }
   ];
 
-  // Contenido del modal en formato HTML
-  modalContent: string = '<p>Este es el contenido del modal</p><p>Puedes agregar más HTML aquí.</p>';
-
   // Método del ciclo de vida OnInit para inicializar AOS
   ngOnInit() {
     AOS.init();
@@ -80,10 +77,5 @@ export class ScrollSpyComponent implements OnInit, AfterViewInit {
   // Método para cerrar el navbar
   closeNavbar() {
     this.isNavbarCollapsed = false;
-  }
-
-  // Método para abrir el modal
-  openModal() {
-    this.isModalVisible = true;
   }
 }

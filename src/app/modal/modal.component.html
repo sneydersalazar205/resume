@@ -1,11 +1,9 @@
-<!-- Botón para abrir/cerrar el modal -->
-<button (click)="toggleModal()">Toggle Modal</button>
-
-<!-- Modal -->
-<div *ngIf="isModalOpen" class="modal">
-  <div class="modal-content">
-    <!-- Contenido del modal -->
-    <span class="close" (click)="toggleModal()">&times;</span>
-    <ng-content></ng-content> <!-- Permite insertar contenido dinámico -->
+<div>
+  <button class="btn btn-primary" (click)="toggleModal()">Open Modal</button>
+  <div class="modal" [class.show]="isModalOpen">
+    <div class="modal-content">
+      <span class="close" (click)="toggleModal()">&times;</span>
+      <ng-content *ngIf="isModalOpen"></ng-content>
+    </div>
   </div>
 </div>
